@@ -13,7 +13,7 @@ app.get '/',(req, res) ->
     requestsPerSecond: 300
           
    loadtest.loadTest options, (error, result) ->
-     return res.send 'Test failed' if error
+     return res.send 'Test failed la la la' if error
      res.send 'Tests run successfully'
 
 port = Number(process.env.PORT || 5000)
