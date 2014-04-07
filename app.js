@@ -11,7 +11,19 @@
   app.use(logfmt.requestLogger());
 
   app.get('/', function(req, res) {
-    return res.send('Hello World! hellohim');
+    var loadtest, options;
+    res.send('Hello World! hellohim');
+    loadtest = require('loadtest');
+    options = {
+      url: 'http://agile-ridge-7948.herokuapp.com/',
+      maxRequests: 1000
+    };
+    return loadtest.loadTest(options, function(error, result) {
+      if (error) {
+        return console.error('Got an error: %s', error);
+      }
+      return console.log('Tests run successfully');
+    });
   });
 
   port = Number(process.env.PORT || 5000);
