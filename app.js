@@ -12,22 +12,21 @@
 
   app.get('/', function(req, res) {
     var loadtest, options;
-    res.send('Hello World! hellohim');
     loadtest = require('loadtest');
     options = {
       url: 'http://agile-ridge-7948.herokuapp.com/',
-      maxRequests: 1000
+      maxRequests: 1000,
+      requestsPerSecond: 300
     };
     return loadtest.loadTest(options, function(error, result) {
       if (error) {
-        return console.error('Got an error: %s', error);
+        return res.send('Test failed');
       }
-      return console.log('Tests run successfully');
+      return res.send('Tests run successfully');
     });
   });
 
-  //port = Number(process.env.PORT || 5000);
-  port = Number(8000);
+  port = Number(process.env.PORT || 5000);
 
   app.listen(port, function() {
     return console.log('Listening on ' + port);

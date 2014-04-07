@@ -6,7 +6,6 @@ app = express()
 app.use logfmt.requestLogger()
 
 app.get '/',(req, res) ->
-  res.send 'Hello World! hellohim'
   loadtest = require 'loadtest'
   options =
     url: 'http://agile-ridge-7948.herokuapp.com/',
@@ -14,8 +13,8 @@ app.get '/',(req, res) ->
     requestsPerSecond: 300
           
    loadtest.loadTest options, (error, result) ->
-     return console.error 'Got an error: %s', error if error
-     console.log 'Tests run successfully' 
+     return res.send 'Test failed' if error
+     res.send 'Tests run successfully'
 
 port = Number(process.env.PORT || 5000)
 
