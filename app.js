@@ -26,7 +26,8 @@
     });
   });
 
-  port = Number(process.env.PORT || 5000);
+  //port = Number(process.env.PORT || 5000);
+  port = Number(8000);
 
   app.listen(port, function() {
     return console.log('Listening on ' + port);

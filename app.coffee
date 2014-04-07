@@ -11,6 +11,7 @@ app.get '/',(req, res) ->
   options =
     url: 'http://agile-ridge-7948.herokuapp.com/',
     maxRequests: 1000,
+    requestsPerSecond: 300
           
    loadtest.loadTest options, (error, result) ->
      return console.error 'Got an error: %s', error if error

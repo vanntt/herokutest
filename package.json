@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "logfmt": "~1.1.2",
-    "express": "~3.5.1"
+    "express": "~3.5.1",
+    "loadtest": "~0.2.11"
   }
 }
