@@ -20,9 +20,9 @@
     };
     return loadtest.loadTest(options, function(error, result) {
       if (error) {
-        return res.send('Test failed');
+        return res.send('Test failed la la la');
       }
-      return res.send('Tests run successfully');
+      return res.send('Tests run successfully! hi hi hi');
     });
   });
 
