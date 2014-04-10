@@ -4,13 +4,14 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -R spec --require should test/*"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "logfmt": "~1.1.2",
     "express": "~3.5.1",
-    "loadtest": "~0.2.11"
+    "loadtest": "~0.2.11",
+    "should": "~3.3.0"
   }
 }
