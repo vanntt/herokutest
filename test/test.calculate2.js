@@ -9,12 +9,16 @@ describe('#testing add() function', function() {
     add('9230').should.equal(14);
     add('-9230').should.equal(14);
     done();
+  }).on('error', function(e) {
+    throw new Error(e);
   });
 
   it('should retun not a number', function(done) {
     add(['2ie', 34,65,'0']).should.equal('not a number');
     add([null,'0e']).should.equal('not a number');
     done();
+  }).on('error', function(e) {
+      throw new Error(e);
   });
 
   it('should retun not an array', function(done) {
@@ -22,20 +26,7 @@ describe('#testing add() function', function() {
     add(null).should.equal('not an array');
     add([]).should.equal('not an array');
     done();
-  });
-
-  after(function() {
-    var failed = false;
-    var tests = this.test.parent.tests;
-    for (var i = 0; i < tests.length; i++) {
-      if (tests[i].state == "failed") {
-        failed = true;
-      }
-    }
-    if (failed) {
-      console.log('test failed');
-    } else {
-      console.log('success');
-    }
+  }).on('error', function(e) {
+    throw new Error(e);
   });
 });
