@@ -22,7 +22,7 @@
       if (error) {
         return res.send('Test failed la la la');
       }
-      return res.send('Tests run successfully! hi hi hi');
+      return res.send('Tests run successfully! hi hi hi ghost');
     });
   });
 
